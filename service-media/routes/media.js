@@ -26,7 +26,7 @@ router.get('/',async(req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // res.send('ok');
+  //res.send('ok');
   const image = req.body.image;
 
   if (!isBase64(image, {mimeRequired: true})) {
