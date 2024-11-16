@@ -14,6 +14,7 @@ module.exports = {
     "password": DB_PASSWORD,
     "database": DB_NAME,
     "host": DB_HOST,
+    "port": 3307, 
     "dialect": "mysql"
   },
   "test": {
@@ -21,6 +22,7 @@ module.exports = {
     "password": DB_PASSWORD,
     "database": DB_NAME,
     "host": DB_HOST,
+    "port": 3307, 
     "dialect": "mysql"
   },
   "production": {
@@ -28,6 +30,7 @@ module.exports = {
     "password": DB_PASSWORD,
     "database": DB_NAME,
     "host": DB_HOST,
+    "port": 3307, 
     "dialect": "mysql"
   }
 }
