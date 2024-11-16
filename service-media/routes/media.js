@@ -40,7 +40,7 @@ router.post('/', (req, res) => {
     }
 
     //'/public/images/1234.png'
-    const filename = filepath.split('/').pop();
+    const filename = filepath.split('\\').pop();
 
     const media = await Media.create({image: `images/${filename}`});
 
