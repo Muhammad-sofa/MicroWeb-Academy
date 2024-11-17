@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
      const User = sequelize.define('User', {
           id: {
                type: DataTypes.INTEGER,
-               autoIncement: true,
+               autoIncrement: true,
                primaryKey: true,
                allowNull: false
           },
@@ -22,7 +22,6 @@ module.exports = (sequelize, DataTypes) => {
           role: {
                type: DataTypes.ENUM,
                values: ['admin', 'student'],
-               allowNull: false,
                allowNull: false,
                defaultValue: 'student'
           },
@@ -46,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
           }
      }, {
           tableName: 'users',
-          timeStamps: true
+          timestamps: true
      });
 
      return User;
