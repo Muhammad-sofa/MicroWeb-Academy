@@ -8,18 +8,18 @@ module.exports = (sequelize, DataTypes) => {
           },
           token: {
                type: DataTypes.TEXT,
-               allowNull: false
+               allowNull: false,
           },
           user_id: {
                type: DataTypes.INTEGER,
                allowNull: false
           },
-          created_at: {
+          createdAt: {
                type: DataTypes.DATE,
                field: 'created_at',
                allowNull: false
           },
-          updated_at: {
+          updatedAt: {
                type: DataTypes.DATE,
                field: 'updated_at',
                allowNull: false
