@@ -5,5 +5,6 @@ const usersHandler = require('./handler/users');
 //const {APP_NAME} = process.env;
 
 router.post('/register', usersHandler.register);
+router.post('/login', usersHandler.login);
 
 module.exports = router;
