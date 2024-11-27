@@ -11,3 +11,4 @@ Route::get('mentors', 'App\Http\Controllers\MentorController@index');
 Route::get('mentors/{id}', 'App\Http\Controllers\MentorController@show');
 Route::post('mentors', 'App\Http\Controllers\MentorController@create');
 Route::put('mentors/{id}', 'App\Http\Controllers\MentorController@update');
+Route::delete('mentors/{id}', 'App\Http\Controllers\MentorController@destroy');
