@@ -8,3 +8,4 @@ use Illuminate\Support\Facades\Route;
 // })->middleware('auth:sanctum');
 
 Route::post('mentors', 'App\Http\Controllers\MentorController@create');
+Route::put('mentors/{id}', 'App\Http\Controllers\MentorController@update');
