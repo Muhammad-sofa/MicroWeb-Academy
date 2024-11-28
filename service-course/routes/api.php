@@ -19,3 +19,4 @@ Route::get('courses', 'App\Http\Controllers\CourseController@index');
 Route::delete('courses/{id}', 'App\Http\Controllers\CourseController@destroy');
 
 Route::post('chapters', 'App\Http\Controllers\ChapterController@create');
+Route::put('chapters/{id}', 'App\Http\Controllers\ChapterController@update');
