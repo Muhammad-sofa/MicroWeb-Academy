@@ -20,3 +20,4 @@ Route::delete('courses/{id}', 'App\Http\Controllers\CourseController@destroy');
 
 Route::post('chapters', 'App\Http\Controllers\ChapterController@create');
 Route::put('chapters/{id}', 'App\Http\Controllers\ChapterController@update');
+Route::get('chapters', 'App\Http\Controllers\ChapterController@index');
