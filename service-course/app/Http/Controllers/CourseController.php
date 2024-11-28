@@ -13,6 +13,20 @@ class CourseController extends Controller
     {
         $courses = Course::query();
 
+        //filter
+        $q = $request->query('q');
+        $status = $request->query('status');
+
+        //q
+        $courses->when($q, function($query) use ($q){
+            return $query->whereRaw("name LIKE '%".strtolower($q)."%'");
+        });
+
+        //status
+        $courses->when($status, function($query) use($status) {
+            return $query->where('status', '=', $status);
+        });
+
         return response()->json([
             'status' => 'success',
             'data' => $courses->paginate(10)
