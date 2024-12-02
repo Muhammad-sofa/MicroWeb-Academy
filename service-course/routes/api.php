@@ -32,3 +32,5 @@ Route::delete('lessons/{id}', 'App\Http\Controllers\LessonController@destroy');
 
 Route::post('image-courses', 'App\Http\Controllers\ImageCourseController@create');
 Route::delete('image-courses/{id}', 'App\Http\Controllers\ImageCourseController@destroy');
+
+Route::post('my-courses', 'App\Http\Controllers\MyCourseController@create');
