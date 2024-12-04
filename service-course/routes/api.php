@@ -35,3 +35,5 @@ Route::delete('image-courses/{id}', 'App\Http\Controllers\ImageCourseController@
 
 Route::post('my-courses', 'App\Http\Controllers\MyCourseController@create');
 Route::get('my-courses', 'App\Http\Controllers\MyCourseController@index');
+
+Route::post('reviews', 'App\Http\Controllers\ReviewController@create');
