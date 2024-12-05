@@ -15,6 +15,7 @@ Route::delete('mentors/{id}', 'App\Http\Controllers\MentorController@destroy');
 
 Route::post('courses', 'App\Http\Controllers\CourseController@create');
 Route::put('courses/{id}', 'App\Http\Controllers\CourseController@update');
+Route::get('courses/{id}', 'App\Http\Controllers\CourseController@show');
 Route::get('courses', 'App\Http\Controllers\CourseController@index');
 Route::delete('courses/{id}', 'App\Http\Controllers\CourseController@destroy');
 
