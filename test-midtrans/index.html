@@ -1,0 +1,24 @@
+<html>
+
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <script type="text/javascript" src="https://app.stg.midtrans.com/snap/snap.js"
+          data-client-key="SET_YOUR_CLIENT_KEY_HERE"></script>
+</head>
+
+<body>
+     <button id="pay-button">Pay!</button>
+
+     <div id="snap-container"></div>
+
+     <script type="text/javascript">
+          var payButton = document.getElementById('pay-button');
+          payButton.addEventListener('click', function () {
+               window.snap.embed('YOUR_SNAP_TOKEN', {
+                    embedId: 'snap-container'
+               });
+          });
+     </script>
+</body>
+
+</html>
