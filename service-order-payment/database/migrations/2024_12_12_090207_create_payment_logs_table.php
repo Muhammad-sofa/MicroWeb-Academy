@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('status');
             $table->string('payment_type');
             $table->json('raw_response');
-            $table->foreignId('orser_id')->constrained('orders')->onDelete('cascade');
+            $table->foreignId('order_id')->constrained('orders')->onDelete('cascade');
             $table->timestamps();
         });
     }
