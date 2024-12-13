@@ -2,13 +2,52 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
     public function create(Request $request)
     {
-        
+        $user = $request->input("user");
+        $course = $request->input("course");
+
+        $order = Order::create([
+            "user_id" => $user["id"],
+            "course_id" => $course["id"],
+        ]);
+
+        $transactionDetails = [
+            "order_id" => $order->id,
+            "gross_amount" => $course["price"]
+        ];
+
+        $itemDetails = [
+            [
+                "id" => $course["id"],
+                "price" => $course["price"],
+                "quantity" => 1,
+                "name" => $course["name"],
+                "brand" => "SofaCourse",
+                "category" => "Online Course"
+            ]
+        ];
+
+        $customerDetails = [
+            "first_name" => $user["name"],
+            "email" => $user["email"],
+        ];
+
+        $midtransParams = [
+            "transaction_details" => $transactionDetails,
+            "item_details" =>$itemDetails,
+            "customer_details" => $customerDetails
+        ];
+
+        $midtransSnapUrl = $this->getMidtransSnapUrl($midtransParams);
+
+        return $midtransSnapUrl;
+        //return response()->json($order);
     }
 
     private function getMidtransSnapUrl($params)
