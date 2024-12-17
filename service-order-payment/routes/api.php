@@ -8,3 +8,4 @@ use Illuminate\Support\Facades\Route;
 // })->middleware('auth:sanctum');
 
 Route::post('orders', 'App\Http\Controllers\OrderController@create');
+Route::get('orders', 'App\Http\Controllers\OrderController@index');
