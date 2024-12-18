@@ -9,3 +9,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('orders', 'App\Http\Controllers\OrderController@create');
 Route::get('orders', 'App\Http\Controllers\OrderController@index');
+
+Route::post('webhook', 'App\Http\Controllers\WebhookController@midtransHandler');
