@@ -69,10 +69,20 @@ class MyCourseController extends Controller
         }
 
         if($course->type === "premium") {
+
+            if($course->price === 0) {
+                return response()->json([
+                    "status" => "error",
+                    "message" => "Price can\'t be 0"
+                ], 405);
+            }
+            
             $order = postOrder([
                 "user" => $user["data"],
                 "course" => $course->toArray()
             ]);
+
+            //echo "<pre>".print_r($order, 1)."</pre>";
 
             if($order["status"] === "error"){
                 return response()->json([
@@ -85,7 +95,7 @@ class MyCourseController extends Controller
                 "status" => $order["status"],
                 "data" => $order["data"]
             ]);
-            
+
         } else {
             $myCourse = MyCourse::create($data);
             return response()->json([
